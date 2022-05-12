@@ -8,6 +8,9 @@ Exercises
 4. Make the ghosts faster/slower.
 5. Make the ghosts smarter.
 
+Samantha Covarrubias
+Alina Rosas
+Nahomi Plata
 """
 
 from random import choice
