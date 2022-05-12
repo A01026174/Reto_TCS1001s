@@ -8,8 +8,10 @@ Exercises
 4. Complete triangle.
 5. Add width parameter.
 
-"""
+Samantha Covarrubias
 
+"""
+import math
 from turtle import *
 from freegames import vector
 
@@ -35,15 +37,41 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
-
-def rectangle(start, end):
-    "Draw rectangle from start to end."
-    pass  # TODO
+    r= math.sqrt((end.x - start.x)**2 + (end.y - start.y)**2)
+    up()
+    goto(start.x, start.y -r)
+    down()
+    begin_fill()
+    circle(r)
+    end_fill()
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(3):
+        forward(end.x - start.x)
+        left(120)
+
+    end_fill()
+
+def rectangle(start, end):
+    "Draw rectangle from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(2):
+        forward(end.x - start.x)
+        left(90)
+        forward(end.y - start.y)
+        left(90)
+
+    end_fill()  
 
 def tap(x, y):
     "Store starting point or draw shape."
@@ -56,7 +84,6 @@ def tap(x, y):
         end = vector(x, y)
         shape(start, end)
         state['start'] = None
-
 def store(key, value):
     "Store value in state at key."
     state[key] = value
