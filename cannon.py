@@ -1,12 +1,12 @@
 """Cannon, hitting targets with projectiles.
-
 Exercises
-
 1. Keep score by counting target hits.
 2. Vary the effect of gravity.
 3. Apply gravity to the targets.
 4. Change the speed of the ball.
-
+Samantha Covarrubias
+Alina Rosas
+Nahomi Plata
 """
 
 from random import randrange
@@ -14,17 +14,16 @@ from turtle import *
 from freegames import vector
 
 ball = vector(-200, -200)
-speed = vector(100, 100)
+speed = vector(0, 0)
 targets = []
-writer=Turtle(visible=False)
 
 def tap(x, y):
     "Respond to screen tap."
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 250) / 25
+        speed.y = (y + 250) / 25
 
 def inside(xy):
     "Return True if xy within screen."
@@ -36,18 +35,16 @@ def draw():
 
     for target in targets:
         goto(target.x, target.y)
-        dot(20, 'blue')
+        dot(35, 'green')
 
     if inside(ball):
         goto(ball.x, ball.y)
-        dot(6, 'red')
+        dot(10, 'blue')
 
     update()
 
 def move():
     "Move ball and targets."
-    writer.undo()
-    writer.write(state['score'])
     # Generate a new target at random times
     if randrange(40) == 0:
         y = randrange(-150, 150)
@@ -70,7 +67,7 @@ def move():
     # Detect if the bullet hits a target
     for target in dupe:
         if abs(target - ball) > 13:
-            targets.append(target)	
+            targets.append(target)
 
     draw()
 
@@ -84,12 +81,8 @@ def move():
 
 setup(420, 420, 370, 0)
 hideturtle()
-writer.goto(160, 160)
-writer.color('red')
-writer.write(state['score'])
 up()
 tracer(False)
 onscreenclick(tap)
 move()
 done()
-
