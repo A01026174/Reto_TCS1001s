@@ -16,6 +16,7 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(100, 100)
 targets = []
+writer=Turtle(visible=False)
 
 def tap(x, y):
     "Respond to screen tap."
@@ -45,6 +46,8 @@ def draw():
 
 def move():
     "Move ball and targets."
+    writer.undo()
+    writer.write(state['score'])
     # Generate a new target at random times
     if randrange(40) == 0:
         y = randrange(-150, 150)
@@ -81,8 +84,12 @@ def move():
 
 setup(420, 420, 370, 0)
 hideturtle()
+writer.goto(160, 160)
+writer.color('red')
+writer.write(state['score'])
 up()
 tracer(False)
 onscreenclick(tap)
 move()
 done()
+
