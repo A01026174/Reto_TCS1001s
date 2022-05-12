@@ -37,19 +37,16 @@ def square(start, end):
 
 def circle(start, end):
     "Draw circle from start to end."
-    #a hipothenuse is the radius of the circle
-    rad= math.sqrt((end.x-start.x)**2 + (end.y-start.y)**2)
+    r= math.sqrt((end.x - start.x)**2 + (end.y - start.y)**2)
     up()
-    #start in the center of the circle
-    goto(start.x, start.y - rad)
+    goto(start.x, start.y -r)
     down()
     begin_fill()
-    circle(rad)
+    circle(r)
     end_fill()
 
 def rectangle(start, end):
-    "Draw rectangle from start to end."
-    pass  # TODO
+    pass
 
 def triangle(start, end):
     "Draw triangle from start to end."
