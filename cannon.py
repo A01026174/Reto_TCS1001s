@@ -67,7 +67,7 @@ def move():
     # Detect if the bullet hits a target
     for target in dupe:
         if abs(target - ball) > 13:
-            targets.append(target)
+            targets.append(target)	
 
     draw()
 
