@@ -8,7 +8,6 @@ Samantha Covarrubias
 Alina Rosas
 Nahomi Plata
 """
-
 from random import randrange
 from turtle import *
 from freegames import vector
@@ -16,6 +15,8 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
+lives = 3
+points = 0
 
 def tap(x, y):
     "Respond to screen tap."
@@ -23,7 +24,7 @@ def tap(x, y):
         ball.x = -199
         ball.y = -199
         speed.x = (x + 250) / 25
-        speed.y = (y + 250) / 25
+        speed.y = (y + 200) / 25
 
 def inside(xy):
     "Return True if xy within screen."
@@ -35,11 +36,11 @@ def draw():
 
     for target in targets:
         goto(target.x, target.y)
-        dot(35, 'green')
+        dot(randrange(15, 25), 'blue')
 
     if inside(ball):
         goto(ball.x, ball.y)
-        dot(10, 'blue')
+        dot(6, 'red')
 
     update()
 
@@ -68,6 +69,9 @@ def move():
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
+        else:
+            global points
+            points += 1
 
     draw()
 
@@ -75,7 +79,12 @@ def move():
     for target in targets:
         if not inside(target):
             #targets.remove(target)
-            return
+            global lives
+            lives -= 1
+            targets.remove(target)
+            if lives < 1:
+                return
+    
 
     ontimer(move, 50)
 
@@ -86,3 +95,5 @@ tracer(False)
 onscreenclick(tap)
 move()
 done()
+print("You got", points, "points")
+print("You had", lives, "lives remaining")
