@@ -1,16 +1,12 @@
 """Cannon, hitting targets with projectiles.
-
 Exercises
-
 1. Keep score by counting target hits.
 2. Vary the effect of gravity.
 3. Apply gravity to the targets.
 4. Change the speed of the ball.
-
 Samantha Covarrubias
 Alina Rosas
 Nahomi Plata
-
 """
 
 from random import randrange
@@ -26,8 +22,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 250) / 25
+        speed.y = (y + 250) / 25
 
 def inside(xy):
     "Return True if xy within screen."
