@@ -9,7 +9,8 @@ Exercises
 5. Add width parameter.
 
 Samantha Covarrubias
-
+Alina Rosas
+Nahomi Plata
 """
 import math
 from turtle import *
@@ -36,15 +37,24 @@ def square(start, end):
     end_fill()
 
 def circle(start, end):
-    "Draw circle from start to end."
-    r= math.sqrt((end.x - start.x)**2 + (end.y - start.y)**2)
+        pass     
+    
+def rectangle(start, end):
+    "Draw rectangle from start to end."
     up()
-    goto(start.x, start.y -r)
+    goto(start.x, start.y)
     down()
     begin_fill()
-    circle(r)
+    
+    for count in range(2):
+        forward(end.x - start.x)
+        right(90)
+        forward(end.x - start.x/2)
+        right(90)
+    
     end_fill()
 
+    
 def triangle(start, end):
     "Draw triangle from start to end."
     up()
@@ -97,13 +107,13 @@ onkey(lambda: color('black'), 'K')
 onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
-onkey(lambda:color('cyan'), 'C')#added new color cyan
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('yellow'), 'Y')
+onkey(lambda: color('magenta'), 'M')
+onkey(lambda: color('cyan'), 'C')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
-
-
 done()
