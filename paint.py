@@ -37,7 +37,7 @@ def square(start, end):
     end_fill()
 
 def circle(start, end):
-        r=math.sqrt((end.x-start.x)**2+(end.y-start.y)**2))
+        r=math.sqrt((end.x-start.x)**2+(end.y-start.y)**2)
         up()
         goto(start.x, start.y -r)
         down()
