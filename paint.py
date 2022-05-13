@@ -36,7 +36,7 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
+def circle1(start, end):
         r=math.sqrt((end.x-start.x)**2+(end.y-start.y)**2)
         up()
         goto(start.x, start.y -r)
@@ -119,7 +119,7 @@ onkey(lambda: color('magenta'), 'M')
 onkey(lambda: color('cyan'), 'C')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circle1), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
