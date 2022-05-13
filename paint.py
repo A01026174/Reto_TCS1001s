@@ -36,17 +36,7 @@ def square(start, end):
 
     end_fill()
 
-<<<<<<< HEAD
 def circle1(start, end):
-        r=math.sqrt((end.x-start.x)**2+(end.y-start.y)**2)
-        up()
-        goto(start.x, start.y -r)
-        down()
-        begin_fill()
-        circle(r)
-        end_fill()
-=======
-def circle(start, end):
     "Draw circle from start to end."
     #The radius is the hypothenuse of the triangle
     radius = math.sqrt((end.x - start.x)**2 + (end.y - start.y)**2)
@@ -58,7 +48,6 @@ def circle(start, end):
     circle(radius)
     end_fill()
     
->>>>>>> 97a1edca1cecb7cc8894a82b8189b001a9233c4e
     
 def rectangle(start, end):
     "Draw rectangle from start to end."
