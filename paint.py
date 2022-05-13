@@ -36,6 +36,7 @@ def square(start, end):
 
     end_fill()
 
+<<<<<<< HEAD
 def circle1(start, end):
         r=math.sqrt((end.x-start.x)**2+(end.y-start.y)**2)
         up()
@@ -44,6 +45,20 @@ def circle1(start, end):
         begin_fill()
         circle(r)
         end_fill()
+=======
+def circle(start, end):
+    "Draw circle from start to end."
+    #The radius is the hypothenuse of the triangle
+    radius = math.sqrt((end.x - start.x)**2 + (end.y - start.y)**2)
+    up()
+    #Displace to location below the center of the circle
+    goto(start.x, start.y - radius)
+    down()
+    begin_fill()
+    circle(radius)
+    end_fill()
+    
+>>>>>>> 97a1edca1cecb7cc8894a82b8189b001a9233c4e
     
 def rectangle(start, end):
     "Draw rectangle from start to end."
@@ -59,7 +74,6 @@ def rectangle(start, end):
         right(90)
     
     end_fill()
-
     
 def triangle(start, end):
     "Draw triangle from start to end."
@@ -67,27 +81,12 @@ def triangle(start, end):
     goto(start.x, start.y)
     down()
     begin_fill()
-
+    
     for count in range(3):
         forward(end.x - start.x)
         left(120)
-
+        
     end_fill()
-
-def rectangle(start, end):
-    "Draw rectangle from start to end."
-    up()
-    goto(start.x, start.y)
-    down()
-    begin_fill()
-
-    for count in range(2):
-        forward(end.x - start.x)
-        left(90)
-        forward(end.y - start.y)
-        left(90)
-
-    end_fill()  
 
 def tap(x, y):
     "Store starting point or draw shape."
@@ -100,6 +99,7 @@ def tap(x, y):
         end = vector(x, y)
         shape(start, end)
         state['start'] = None
+
 def store(key, value):
     "Store value in state at key."
     state[key] = value
