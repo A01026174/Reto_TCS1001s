@@ -9,6 +9,8 @@ Exercises
 5. Add width parameter.
 
 Samantha Covarrubias
+Alina Rosas
+Nahomi Plata
 """
 import math
 from turtle import *
