@@ -15,6 +15,7 @@ from freegames import vector
 ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
+#add variables for counting targets
 lives = 3
 points = 0
 
