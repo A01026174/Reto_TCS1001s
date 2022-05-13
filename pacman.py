@@ -21,7 +21,9 @@ state = {'score': 0}
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 aim = vector(5, 0)
-pacman = vector(-50, -50)
+#changed where pacman satrts
+pacman = vector(-60, -50)
+#added more ghosts
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
     [vector(-180, -160), vector(0, 5)],
@@ -29,6 +31,7 @@ ghosts = [
     [vector(100, -160), vector(-5, 0)],
     [vector(50, 80), vector(2,3)],
 ]
+#changed the board tiles
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
